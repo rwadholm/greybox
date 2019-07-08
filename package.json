@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/rwadholm/greybox",
+  "repository": "https://github.com/rwadholm/greybox",
   "keywords": [
     "Greybox",
     "IDE",
