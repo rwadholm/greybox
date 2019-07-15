@@ -16,6 +16,8 @@ You can learn more about each of these components within the [Quick Start Guide]
 
 ## To Use
 
+To download and use this application, run the following file: https://github.com/rwadholm/greybox/raw/master/dist/greybox%20Setup%200.0.1.exe
+
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
