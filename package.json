@@ -4,7 +4,9 @@
   "description": "A minimal desktop writer",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": "https://github.com/rwadholm/greybox",
   "keywords": [
@@ -16,6 +18,17 @@
   "author": "Bob Wadholm",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^5.0.6"
+    "electron": "^5.0.6",
+    "electron-builder": "^21.0.15"
+  },
+  "build": {
+    "appId": "Greybox Editor",
+    "mac": {
+      "category": "Editor"
+    }
+  },
+  "postinstall": "electron-builder install-app-deps",
+  "dependencies": {
+    "prismjs": "^1.16.0"
   }
 }

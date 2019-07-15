@@ -1,0 +1,7 @@
+directories:
+  output: dist
+  buildResources: build
+appId: Greybox Editor
+mac:
+  category: Editor
+electronVersion: 5.0.6

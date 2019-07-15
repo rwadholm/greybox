@@ -1,0 +1,4 @@
+owner: rwadholm
+repo: greybox
+provider: github
+updaterCacheDirName: greybox-updater

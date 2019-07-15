@@ -9,11 +9,13 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    backgroundColor: '#2e2c29',
-    width: 800,
-    height: 1000,
+    width: 400,
+    height: 600,
+    frame: false,
+    transparent: true,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true
     }
   })
 
