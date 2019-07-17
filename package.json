@@ -33,6 +33,5 @@
   },
   "postinstall": "electron-builder install-app-deps",
   "dependencies": {
-    "prismjs": "^1.16.0"
   }
 }
