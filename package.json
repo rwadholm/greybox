@@ -23,6 +23,10 @@
   },
   "build": {
     "appId": "Greybox Editor",
+    "fileAssociations": [
+      "txt",
+      "gxt"
+    ],
     "mac": {
       "category": "Editor"
     }
