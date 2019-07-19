@@ -94,6 +94,6 @@ html, body {
 }
 @font-face {
   font-family: 'Open Sans';
-  src: url(https://github.com/rwadholm/greybox/blob/master/dist/css/fonts/OpenSans-Regular.ttf);
+  src: url(https://github.com/rwadholm/greybox/raw/master/css/fonts/OpenSans-Regular.ttf);
   font-weight: bold;
 }
