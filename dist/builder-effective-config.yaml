@@ -2,6 +2,12 @@ directories:
   output: dist
   buildResources: build
 appId: Greybox Editor
+fileAssociations:
+  - ext:
+      - txt
+      - gxt
+    name: Plain Text
+    role: Editor
 mac:
   category: Editor
 electronVersion: 5.0.6

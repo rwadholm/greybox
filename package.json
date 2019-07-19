@@ -24,8 +24,11 @@
   "build": {
     "appId": "Greybox Editor",
     "fileAssociations": [
-      "txt",
-      "gxt"
+        {
+            "ext": ["txt", "gxt"],
+            "name": "Plain Text",
+            "role": "Editor"
+        }
     ],
     "mac": {
       "category": "Editor"
