@@ -83,7 +83,7 @@ document.addEventListener("keydown", function(e) {
 
 // Win32 file opening
 app.requestSingleInstanceLock()
-const shouldQuit = app.on('second-instance',(argv, workingDirectory) => {
+app.on('second-instance',(argv, workingDirectory) => {
   if (process.platform == 'win32') {
     filePath = process.argv.slice(1)
   }
@@ -92,9 +92,6 @@ const shouldQuit = app.on('second-instance',(argv, workingDirectory) => {
         win.focus()
   }
 })
-if (shouldQuit) {
-    app.quit()
-}
 
 // OSX file opening
 app.on('open-url', function (e, url) {
