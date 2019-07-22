@@ -81,13 +81,11 @@ document.addEventListener("keydown", function(e) {
   }
 }, false);
 
-app.on('open-url', function(e, filePath) {
-  e.preventDefault()
+const filePath = argv.slice(1)
+console.log(filePath)
+if(filePath !== 'undefined'){
   console.log(filePath)
-  if(filePath !== 'undefined'){
-    console.log(filePath)
-    openFile(filePath)
-  } else {
-    alert("Sorry, there was an error opening the file.")
-  }
-})
+  openFile(filePath)
+} else {
+  alert("Sorry, there was an error opening the file.")
+}
