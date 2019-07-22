@@ -93,7 +93,6 @@ const shouldQuit = app.makeSingleInstance((argv, workingDirectory) => {
 })
 if (shouldQuit) {
     app.quit()
-    return
 }
 
 // OSX file opening
