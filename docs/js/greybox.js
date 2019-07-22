@@ -92,9 +92,7 @@ app.on('second-instance',(e, argv, workingDirectory) => {
         win.focus()
   }
 })
-if (shouldQuit) {
-    app.quit()
-}
+
 
 // OSX file opening
 app.on('open-url', function (e, url) {
