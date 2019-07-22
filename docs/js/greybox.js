@@ -81,7 +81,8 @@ document.addEventListener("keydown", function(e) {
   }
 }, false);
 
-app.on('open-file', function(ev, filePath) {
+app.on('open-url', function(e, filePath) {
+  e.preventDefault()
   console.log(filePath)
   if(filePath !== 'undefined'){
     console.log(filePath)
