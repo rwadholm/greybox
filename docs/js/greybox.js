@@ -82,14 +82,10 @@ document.addEventListener("keydown", function(e) {
 }, false);
 
 // Win32 file opening
-app.requestSingleInstanceLock()
-app.on('second-instance',(e, argv, workingDirectory) => {
+
+app.on('browser-window-focus',(e, window) => {
   if (process.platform == 'win32') {
-    filePath = argv.slice(1)
-  }
-  if (win) {
-    if (win.isMinimized()) win.restore()
-        win.focus()
+    filePath = process.argv.slice(1)
   }
 
   if(filePath !== 'undefined'){
