@@ -87,9 +87,9 @@ app.on('second-instance',(argv, workingDirectory) => {
   if (process.platform == 'win32') {
     filePath = process.argv.slice(1)
   }
-  if (win) {
-    if (win.isMinimized()) win.restore()
-        win.focus()
+  if (mainWindow) {
+    if (mainWindow.isMinimized()) mainWindow.restore()
+        mainWindow.focus()
   }
 })
 
