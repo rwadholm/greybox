@@ -1,4 +1,4 @@
-const { dialog } = require('electron').remote
+const { app, dialog } = require('electron').remote
 const fs = require('fs')
 
 let currentFile = null
