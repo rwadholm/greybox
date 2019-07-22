@@ -87,11 +87,14 @@ app.on('second-instance',(e, argv, workingDirectory) => {
   if (process.platform == 'win32') {
     filePath = process.argv.slice(1)
   }
-  if (mainWindow) {
-    if (mainWindow.isMinimized()) mainWindow.restore()
-        mainWindow.focus()
+  if (win) {
+    if (win.isMinimized()) win.restore()
+        win.focus()
   }
 })
+if (shouldQuit) {
+    app.quit()
+}
 
 // OSX file opening
 app.on('open-url', function (e, url) {
