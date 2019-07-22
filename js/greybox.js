@@ -80,3 +80,7 @@ document.addEventListener("keydown", function(e) {
     });
   }
 }, false);
+
+app.on('open-file', function(ev, path) {
+  alert('hey '+ path)
+})

@@ -24,17 +24,19 @@
   "build": {
     "appId": "Greybox Editor",
     "fileAssociations": [
-        {
-            "ext": ["txt", "gxt"],
-            "name": "Plain Text",
-            "role": "Editor"
-        }
+      {
+        "ext": [
+          "txt",
+          "gxt"
+        ],
+        "name": "Plain Text",
+        "role": "Editor",
+        "perMachine": true
+      }
     ],
     "mac": {
       "category": "Editor"
     }
   },
-  "postinstall": "electron-builder install-app-deps",
-  "dependencies": {
-  }
+  "postinstall": "electron-builder install-app-deps"  
 }
