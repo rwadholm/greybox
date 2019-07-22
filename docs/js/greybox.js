@@ -81,7 +81,27 @@ document.addEventListener("keydown", function(e) {
   }
 }, false);
 
-const filePath = argv.slice(1)
+// Win32 file opening
+const shouldQuit = app.makeSingleInstance((argv, workingDirectory) => {
+  if (process.platform == 'win32') {
+    filePath = argv.slice(1)
+  }
+  if (win) {
+    if (win.isMinimized()) win.restore()
+        win.focus()
+  }
+})
+if (shouldQuit) {
+    app.quit()
+    return
+}
+
+// OSX file opening
+app.on('open-url', function (e, url) {
+  event.preventDefault()
+  filePath = url
+})
+
 console.log(filePath)
 if(filePath !== 'undefined'){
   console.log(filePath)
