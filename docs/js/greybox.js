@@ -85,7 +85,7 @@ document.addEventListener("keydown", function(e) {
 app.requestSingleInstanceLock()
 app.on('second-instance',(e, argv, workingDirectory) => {
   if (process.platform == 'win32') {
-    filePath = process.argv.slice(1)
+    filePath = argv.slice(1)
   }
   if (win) {
     if (win.isMinimized()) win.restore()
