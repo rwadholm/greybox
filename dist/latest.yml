@@ -1,8 +1,8 @@
 version: 0.0.1
 files:
   - url: greybox-Setup-0.0.1.exe
-    sha512: uWB/OLqDeVfhH4B5mQZK3E2Rd+qjC9l9TX9iZNJGweDf70Gqu+6S5wWmwr7Jug9MNA2imw1EANCwF7ZVY2VycA==
-    size: 43943884
+    sha512: 298InuPMG2/KgMvBLmyWtaCCHLFKd8c+k8TzXnlDhLa+C9F4ge3SETmmFYOSzAoI6BZw7TRDnGmKjdkO5QEZPg==
+    size: 43943907
 path: greybox-Setup-0.0.1.exe
-sha512: uWB/OLqDeVfhH4B5mQZK3E2Rd+qjC9l9TX9iZNJGweDf70Gqu+6S5wWmwr7Jug9MNA2imw1EANCwF7ZVY2VycA==
-releaseDate: '2019-07-19T21:59:48.940Z'
+sha512: 298InuPMG2/KgMvBLmyWtaCCHLFKd8c+k8TzXnlDhLa+C9F4ge3SETmmFYOSzAoI6BZw7TRDnGmKjdkO5QEZPg==
+releaseDate: '2019-07-22T20:50:49.726Z'
