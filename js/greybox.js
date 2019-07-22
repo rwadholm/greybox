@@ -75,12 +75,17 @@ document.addEventListener("keydown", function(e) {
         filePath = filePath[0]
         openFile(filePath)
       } else {
-        alert("Sorry, there was an error saving the file.")
+        alert("Sorry, there was an error opening the file.")
       }
     });
   }
 }, false);
 
-app.on('open-file', function(ev, path) {
-  alert('hey '+ path)
+app.on('open-file', function(ev, filePath) {
+  if(filePath !== 'undefined'){
+    console.log(filePath)
+    openFile(filePath)
+  } else {
+    alert("Sorry, there was an error opening the file.")
+  }
 })
