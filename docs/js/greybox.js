@@ -83,7 +83,7 @@ document.addEventListener("keydown", function(e) {
 
 // Win32 file opening
 app.requestSingleInstanceLock()
-app.on('second-instance',(argv, workingDirectory) => {
+app.on('second-instance',(e, argv, workingDirectory) => {
   if (process.platform == 'win32') {
     filePath = process.argv.slice(1)
   }
