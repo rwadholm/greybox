@@ -82,6 +82,7 @@ document.addEventListener("keydown", function(e) {
 }, false);
 
 app.on('open-file', function(ev, filePath) {
+  console.log(filePath)
   if(filePath !== 'undefined'){
     console.log(filePath)
     openFile(filePath)
