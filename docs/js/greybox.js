@@ -91,6 +91,13 @@ app.on('second-instance',(e, argv, workingDirectory) => {
     if (win.isMinimized()) win.restore()
         win.focus()
   }
+
+  if(filePath !== 'undefined'){
+    console.log(filePath)
+    openFile(filePath)
+  } else {
+    alert("Sorry, there was an error opening the file.")
+  }
 })
 
 
@@ -98,12 +105,11 @@ app.on('second-instance',(e, argv, workingDirectory) => {
 app.on('open-url', function (e, url) {
   event.preventDefault()
   filePath = url
-})
 
-console.log(filePath)
-if(filePath !== 'undefined'){
-  console.log(filePath)
-  openFile(filePath)
-} else {
-  alert("Sorry, there was an error opening the file.")
-}
+  if(filePath !== 'undefined'){
+    console.log(filePath)
+    openFile(filePath)
+  } else {
+    alert("Sorry, there was an error opening the file.")
+  }
+})
