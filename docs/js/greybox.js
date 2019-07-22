@@ -82,9 +82,10 @@ document.addEventListener("keydown", function(e) {
 }, false);
 
 // Win32 file opening
-const shouldQuit = app.makeSingleInstance((argv, workingDirectory) => {
+app.requestSingleInstanceLock()
+const shouldQuit = app.on('second-instance',(argv, workingDirectory) => {
   if (process.platform == 'win32') {
-    filePath = argv.slice(1)
+    filePath = process.argv.slice(1)
   }
   if (win) {
     if (win.isMinimized()) win.restore()
