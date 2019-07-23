@@ -82,8 +82,8 @@ document.addEventListener("keydown", function(e) {
     });
   }
 }, false)
-console.log(process.argv[1])
 if(ipcMain){
+  console.log(process.argv)
   ipcMain.on('get-file-data', function(event) { // Win32 file opening
     var data = null
     if (process.platform == 'win32' && process.argv.length >= 2) {
