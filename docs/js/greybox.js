@@ -83,14 +83,16 @@ document.addEventListener("keydown", function(e) {
   }
 }, false)
 
-ipcMain.on('get-file-data', function(event, arg) { // Win32 file opening
-  var data = null
-  if (process.platform == 'win32' && process.argv.length >= 2) {
-    var openFilePath = process.argv[1]
-    data = openFilePath
-  }
-  event.returnValue = data
-})
+if(ipcMain){
+  ipcMain.on('get-file-data', function(event, arg) { // Win32 file opening
+    var data = null
+    if (process.platform == 'win32' && process.argv.length >= 2) {
+      var openFilePath = process.argv[1]
+      data = openFilePath
+    }
+    event.returnValue = data
+  })
+}
 
 if(ipcRenderer){
   filePath = ipcRenderer.sendSync('get-file-data')
