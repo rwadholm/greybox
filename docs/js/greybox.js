@@ -1,4 +1,4 @@
-const { app, dialog, ipcMain } = require('electron').remote
+const { app, dialog, ipcMain, BrowserWindow } = require('electron').remote
 const fs = require('fs')
 
 let currentFile = null
