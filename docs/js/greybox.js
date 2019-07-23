@@ -1,4 +1,4 @@
-const { app, dialog } = require('electron').remote
+const { app, dialog, ipcMain } = require('electron').remote
 var ipc = require('ipc')
 const fs = require('fs')
 
@@ -82,7 +82,7 @@ document.addEventListener("keydown", function(e) {
   }
 }, false)
 
-ipc.on('get-file-data', function(event) { // Win32 file opening
+ipcMain.on('get-file-data', function(event, arg) { // Win32 file opening
   if (process.platform == 'win32' && process.argv.length >= 2) {
     filePath = process.argv[1]
     console.log('argv: '+ process.argv)
