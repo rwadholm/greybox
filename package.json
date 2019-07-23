@@ -37,5 +37,8 @@
       "category": "Editor"
     }
   },
-  "postinstall": "electron-builder install-app-deps"
+  "postinstall": "electron-builder install-app-deps",
+  "dependencies": {
+    "ipc": "^0.0.1"
+  }
 }
