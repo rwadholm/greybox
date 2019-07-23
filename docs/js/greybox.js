@@ -1,5 +1,4 @@
 const { app, dialog, ipcMain } = require('electron').remote
-var ipc = require('ipc')
 const fs = require('fs')
 
 let currentFile = null
