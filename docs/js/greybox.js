@@ -1,5 +1,5 @@
 const { app, dialog, ipcMain, BrowserWindow } = require('electron').remote
-const ipcRenderer = require('ipcRenderer')
+const { ipcRenderer } = require('electron')
 const fs = require('fs')
 
 let currentFile = null
