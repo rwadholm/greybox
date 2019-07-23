@@ -1,5 +1,5 @@
-const { app, dialog, ipcMain } = require('electron').remote
-const { ipcRenderer } = require('electron')
+const { app, dialog } = require('electron').remote
+//const { ipcRenderer } = require('electron')
 const fs = require('fs')
 
 let currentFile = null
@@ -83,30 +83,11 @@ document.addEventListener("keydown", function(e) {
   }
 }, false)
 
-if(ipcMain){
-  console.log(process.argv)
-  ipcMain.on('get-file-data', function(event) { // Win32 file opening
-    console.log('getting data')
-    let data = null
-    if (process.platform == 'win32' && process.argv.length >= 2) {
-      var openFilePath = process.argv[1]
-      data = openFilePath
-    }
-    event.returnValue = data
-  })
-}
-if(ipcRenderer){
-  console.log('rendered:'+ process.argv)
-  filePath = ipcRenderer.sendSync('get-file-data')
-  if (filePath ===  null) {
-      console.log("There is no file")
-  } else {
-      // Do something with the file.
-      console.log(filePath)
-      openFile(filePath)
-  }
-}
 
+console.log(process)
+
+
+/*
 app.on('will-finish-launching', () => { // OSX file opening
   console.log('wfl: '+ process.argv)
   app.on('open-url', function (e, filePath) {
@@ -116,4 +97,4 @@ app.on('will-finish-launching', () => { // OSX file opening
       openFile(filePath)
     }
   })
-})
+})*/
