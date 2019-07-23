@@ -82,20 +82,28 @@ document.addEventListener("keydown", function(e) {
 }, false)
 
 ipcMain.on('get-file-data', function(event, arg) { // Win32 file opening
+  var data = null
   if (process.platform == 'win32' && process.argv.length >= 2) {
-    filePath = process.argv[1]
-    console.log('argv: '+ process.argv)
-    if(filePath !== 'undefined'){
-      console.log(filePath)
-      openFile(filePath)
-    }
+    var openFilePath = process.argv[1]
+    data = openFilePath
   }
+  event.returnValue = data
 })
+
+var filePath = ipcRenderer.sendSync('get-file-data')
+if (filePath ===  null) {
+    console.log("There is no file")
+} else {
+    // Do something with the file.
+    console.log(filePath)
+    openFile(filePath)
+}
+
 
 app.on('will-finish-launching', () => { // OSX file opening
   app.on('open-url', function (e, filePath) {
     e.preventDefault()
-    if(filePath !== 'undefined'){
+    if(filePath !== 'undefined' && filePath !== null){
       console.log(filePath)
       openFile(filePath)
     }
