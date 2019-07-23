@@ -83,17 +83,18 @@ document.addEventListener("keydown", function(e) {
   }
 }, false)
 console.log(process.argv[1])
-/*if(ipcMain){
+if(ipcMain){
   ipcMain.on('get-file-data', function(event) { // Win32 file opening
     var data = null
     if (process.platform == 'win32' && process.argv.length >= 2) {
       var openFilePath = process.argv[1]
       data = openFilePath
+      openFile(data)
     }
     event.returnValue = data
   })
 }
-
+/*
 if(ipcRenderer){
   filePath = ipcRenderer.sendSync('get-file-data')
   if (filePath ===  null) {
