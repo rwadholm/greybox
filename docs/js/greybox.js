@@ -88,13 +88,12 @@ console.log(process.argv)
     var data = null
     if (process.platform == 'win32' && process.argv.length >= 2) {
       var openFilePath = process.argv[1]
-      data = openFilePath
-      openFile(data)
+      data = openFilePath      
     }
     event.returnValue = data
   })
 }
-/*
+
 if(ipcRenderer){
   filePath = ipcRenderer.sendSync('get-file-data')
   if (filePath ===  null) {
@@ -115,4 +114,4 @@ app.on('will-finish-launching', () => { // OSX file opening
       openFile(filePath)
     }
   })
-})*/
+})
