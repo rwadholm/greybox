@@ -79,33 +79,20 @@ document.addEventListener("keydown", function(e) {
       }
     });
   }
-}, false);
+}, false)
 
-// Win32 file opening
-
-app.on('browser-window-focus',(e, window) => {
-  if (process.platform == 'win32') {
+app.on('will-finish-launching', () => {
+  if (process.platform == 'win32') { // Win32 file opening
     filePath = process.argv.slice(1)
+    console.log('argv: '+ process.argv)
+  } else { // OSX file opening
+    app.on('open-url', function (e, url) {
+      e.preventDefault()
+      filePath = url
+    })
   }
-
   if(filePath !== 'undefined'){
     console.log(filePath)
     openFile(filePath)
-  } else {
-    alert("Sorry, there was an error opening the file.")
-  }
-})
-
-
-// OSX file opening
-app.on('open-url', function (e, url) {
-  event.preventDefault()
-  filePath = url
-
-  if(filePath !== 'undefined'){
-    console.log(filePath)
-    openFile(filePath)
-  } else {
-    alert("Sorry, there was an error opening the file.")
   }
 })
