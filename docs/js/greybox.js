@@ -1,4 +1,5 @@
 const { app, dialog } = require('electron').remote
+var ipc = require('ipc')
 const fs = require('fs')
 
 let currentFile = null
@@ -81,18 +82,23 @@ document.addEventListener("keydown", function(e) {
   }
 }, false)
 
-app.on('will-finish-launching', () => {
-  if (process.platform == 'win32') { // Win32 file opening
-    filePath = process.argv.slice(1)
+ipc.on('get-file-data', function(event) { // Win32 file opening
+  if (process.platform == 'win32' && process.argv.length >= 2) {
+    filePath = process.argv[1]
     console.log('argv: '+ process.argv)
-  } else { // OSX file opening
-    app.on('open-url', function (e, url) {
-      e.preventDefault()
-      filePath = url
-    })
+    if(filePath !== 'undefined'){
+      console.log(filePath)
+      openFile(filePath)
+    }
   }
-  if(filePath !== 'undefined'){
-    console.log(filePath)
-    openFile(filePath)
-  }
+})
+
+app.on('will-finish-launching', () => { // OSX file opening
+  app.on('open-url', function (e, filePath) {
+    e.preventDefault()
+    if(filePath !== 'undefined'){
+      console.log(filePath)
+      openFile(filePath)
+    }
+  })
 })
