@@ -103,7 +103,7 @@ if(ipcRenderer){
       console.log(filePath)
       openFile(filePath)
   }
-}*/
+}
 
 
 app.on('will-finish-launching', () => { // OSX file opening
@@ -114,4 +114,4 @@ app.on('will-finish-launching', () => { // OSX file opening
       openFile(filePath)
     }
   })
-})
+})*/
