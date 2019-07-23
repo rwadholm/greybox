@@ -3,6 +3,7 @@ const { ipcRenderer } = require('electron')
 const fs = require('fs')
 
 let currentFile = null
+let filePath = null
 
 document.write('<h1 id="gb-h1">greybox <span id="gb-filename" contenteditable="true" title=""></span></h1><nav id="gb-nav"> <a href="#" id="gb-close">X</a></nav><section id="gb-outer-code" contenteditable="true"></section>')
 
@@ -91,13 +92,15 @@ ipcMain.on('get-file-data', function(event, arg) { // Win32 file opening
   event.returnValue = data
 })
 
-var filePath = ipcRenderer.sendSync('get-file-data')
-if (filePath ===  null) {
-    console.log("There is no file")
-} else {
-    // Do something with the file.
-    console.log(filePath)
-    openFile(filePath)
+if(ipcRenderer){
+  filePath = ipcRenderer.sendSync('get-file-data')
+  if (filePath ===  null) {
+      console.log("There is no file")
+  } else {
+      // Do something with the file.
+      console.log(filePath)
+      openFile(filePath)
+  }
 }
 
 
