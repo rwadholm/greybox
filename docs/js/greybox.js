@@ -1,5 +1,4 @@
-const { app, dialog, ipcMain } = require('electron').remote
-//const { ipcRenderer } = require('electron')
+const { app, dialog, ipcMain, ipcRenderer } = require('electron').remote
 const fs = require('fs')
 
 let currentFile = null
@@ -88,7 +87,7 @@ console.log(process.argv)
     var data = null
     if (process.platform == 'win32' && process.argv.length >= 2) {
       var openFilePath = process.argv[1]
-      data = openFilePath      
+      data = openFilePath
     }
     event.returnValue = data
   })
