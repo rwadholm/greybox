@@ -84,7 +84,7 @@ document.addEventListener("keydown", function(e) {
 }, false)
 
 
-console.log(process.argv)
+console.log(process)
 
 
 /*
