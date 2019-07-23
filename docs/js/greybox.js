@@ -84,7 +84,8 @@ document.addEventListener("keydown", function(e) {
 if(ipcMain){
 console.log(process.argv)
   ipcMain.on('get-file-data', function(event) { // Win32 file opening
-    var data = null
+    console.log('getting data')
+    let data = null
     if (process.platform == 'win32' && process.argv.length >= 2) {
       var openFilePath = process.argv[1]
       data = openFilePath
@@ -94,6 +95,7 @@ console.log(process.argv)
 }
 
 if(ipcRenderer){
+  console.log('rendered:'+ process.argv)
   filePath = ipcRenderer.sendSync('get-file-data')
   if (filePath ===  null) {
       console.log("There is no file")
