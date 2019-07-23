@@ -84,7 +84,7 @@ document.addEventListener("keydown", function(e) {
 }, false)
 
 if(ipcMain){
-  ipcMain.on('get-file-data', function(event, arg) { // Win32 file opening
+  ipcMain.on('get-file-data', function(event) { // Win32 file opening
     var data = null
     if (process.platform == 'win32' && process.argv.length >= 2) {
       var openFilePath = process.argv[1]
