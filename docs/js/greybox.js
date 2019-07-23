@@ -1,4 +1,5 @@
 const { app, dialog, electron, ipcMain } = require('electron').remote
+const ipcRenderer = require('electron')
 const fs = require('fs')
 
 let currentFile = null
@@ -96,7 +97,7 @@ if(ipcMain){
 }
 if(ipcRenderer){
   console.log('rendered:'+ process.argv)
-  filePath = ipcRenderer.sendSync('get-file-data')
+  filePath = ipcRenderer.send('get-file-data')
   if (filePath ===  null) {
       console.log("There is no file")
   } else {
