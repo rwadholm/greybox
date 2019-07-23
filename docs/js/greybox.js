@@ -87,7 +87,7 @@ document.addEventListener("keydown", function(e) {
 console.log(process.argv)
 
 
-
+/*
 app.on('will-finish-launching', () => { // OSX file opening
   console.log('wfl: '+ process.argv)
   app.on('open-url', function (e, filePath) {
@@ -97,4 +97,4 @@ app.on('will-finish-launching', () => { // OSX file opening
       openFile(filePath)
     }
   })
-})
+})*/
