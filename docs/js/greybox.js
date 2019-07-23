@@ -94,6 +94,7 @@ if(ipcMain){
   })
 }
 
+app.whenReady({
 if(ipcRenderer){
   console.log('rendered:'+ process.argv)
   filePath = ipcRenderer.sendSync('get-file-data')
@@ -105,6 +106,7 @@ if(ipcRenderer){
       openFile(filePath)
   }
 }
+})
 
 
 app.on('will-finish-launching', () => { // OSX file opening
