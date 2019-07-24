@@ -16,7 +16,7 @@ function saveFile (filePath, content) {
 }
 
 function openFile (filePath) {
-  fs.readFile(filePath,'utf-8', (err,content) => {
+  fs.readFile(filePath,'utf-8', (err, content) => {
     if(err){
       alert('Failed to open the file')
       return
@@ -43,7 +43,7 @@ document.getElementById("gb-close").addEventListener("click", function (e) {
 
 // Clean pasted text
 document.getElementById("gb-outer-code").addEventListener("paste", (e) => {
-  let paste = (event.clipboardData || window.clipboardData).getData('text')
+  let paste = (event.clipboardData || window.clipboardData).getData('text/html')
   const selection = window.getSelection()
   if (!selection.rangeCount) return false
   selection.deleteFromDocument()
