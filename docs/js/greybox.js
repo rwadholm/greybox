@@ -32,7 +32,7 @@ function nameFile (filePath){
   if(currentFilename.length > 30) {
     currentFilename = currentFilename.substring(0,30) +"&hellip;";
   }
-  document.getElementById("gb-filename").title = currentFile
+  document.getElementById("gb-filename")[0].setAttribute("data-title", currentFile)
   document.getElementById("gb-filename").innerHTML = currentFilename
 }
 
