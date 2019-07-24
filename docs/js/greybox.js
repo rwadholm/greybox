@@ -92,13 +92,13 @@ if(ipcMain){
   ipcMain.on('get-file-data', (e, arg) => { // Win32 file opening
     console.log('getting data')
     let data = null
-    if (process.platform == 'win32' && process.argv.length >= 2) {
-      var openFilePath = process.argv[1]
+    if (app.process.platform == 'win32' && app.process.argv.length >= 2) {
+      var openFilePath = app.process.argv[1]
       data = openFilePath
       console.log('data:'+ data)
     }
     e.reply = e.reply = ('get-file-data-reply', data)
-  })  
+  })
 }
 if(ipcRenderer){
   console.log('rendered:'+ process.argv)
