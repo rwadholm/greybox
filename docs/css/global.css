@@ -42,7 +42,7 @@ html, body {
 }
 #gb-filename:before {
   position: absolute;
-  content: attr(title) ": ";
+  content: attr(title) " ";
   line-height: 1.2em;
   background: #333;
   color: #fff;

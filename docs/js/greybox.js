@@ -5,7 +5,7 @@ const fs = require('fs')
 let currentFile = null
 let filePath = null
 
-document.write('<h1 id="gb-h1">greybox <span id="gb-filename" title=""></span></h1><nav id="gb-nav"> <a href="#" id="gb-close">X</a></nav><section id="gb-outer-code" contenteditable="true"></section>')
+document.write('<h1 id="gb-h1">greybox <span id="gb-filename" title="Filename"></span></h1><nav id="gb-nav"> <a href="#" id="gb-close">X</a></nav><section id="gb-outer-code" contenteditable="true"></section>')
 
 function saveFile (filePath, content) {
   try {
