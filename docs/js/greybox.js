@@ -105,11 +105,10 @@ if(ipcRenderer){
   ipcRenderer.send('get-file-data')
   ipcRenderer.on('get-file-data-reply', (e, arg) => {
     if (arg === null) {
-        console.log("There is no file")
+      console.log("There is no file")
     } else {
-        // Do something with the file.
-        console.log(arg)
-        openFile(arg)
+      console.log(arg)
+      openFile(arg)
     }
   })
 }
