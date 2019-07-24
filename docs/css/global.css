@@ -57,6 +57,7 @@ html, body {
   border-radius: 8px;
   display: none;
   z-index: 999;
+  transition: all ease 0.6s;
 }
 #gb-filename:hover::before{
   opacity: 0.9;
