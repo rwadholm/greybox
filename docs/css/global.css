@@ -31,7 +31,15 @@ html, body {
   -webkit-user-select: none;
   -webkit-app-region: drag;
 }
-#gb-h1:before {
+#gb-filename {
+  color: #aaa;
+  position: relative;
+  font-style: italic;
+  font-size: 14px;
+  font-family: 'Consolas','Open Sans','Helvetica',sans-serif;
+  -webkit-user-select: true;
+}
+#gb-filename:before {
   position: absolute;
   background: #333;
   padding: 3px 8px;
@@ -45,16 +53,9 @@ html, body {
   content: attr(title) ": ";
   transition: all ease 0.3s;
 }
-#gb-h1:hover:before{
+#gb-filename:hover:before{
   display: inline-block;
   opacity: 0.9;
-}
-#gb-filename {
-  color: #aaa;
-  font-style: italic;
-  font-size: 14px;
-  font-family: 'Consolas','Open Sans','Helvetica',sans-serif;
-  -webkit-user-select: true;
 }
 #gb-nav {
   position: fixed;
