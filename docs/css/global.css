@@ -39,6 +39,7 @@ html, body {
   font-family: 'Consolas','Open Sans','Helvetica',sans-serif;
   display: inline-block;
   font-style: italic;
+  padding-bottom: 4px;
   -webkit-app-region: no-drag;
   -webkit-user-select: select;
 }
