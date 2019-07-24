@@ -41,7 +41,7 @@ html, body {
   font-style: italic;
   padding-bottom: 4px;
   -webkit-app-region: no-drag;
-  -webkit-user-select: select;
+  -webkit-user-select: text;
 }
 #gb-filename::before {
   position: absolute;
