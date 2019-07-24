@@ -97,12 +97,11 @@ if(ipcMain){
       data = openFilePath
       console.log('data:'+ data)
     }
-    e.reply = ('get-file-data-reply', data)
-  })
+    e.reply = e.reply = ('get-file-data-reply', data)
+  })  
 }
 if(ipcRenderer){
   console.log('rendered:'+ process.argv)
-  ipcRenderer.send('get-file-data')
   ipcRenderer.on('get-file-data-reply', (e, arg) => {
     if (arg === null) {
       console.log("There is no file")
@@ -111,6 +110,8 @@ if(ipcRenderer){
       openFile(arg)
     }
   })
+  ipcRenderer.send('get-file-data','file')
+
 }
 
 app.on('will-finish-launching', () => { // OSX file opening
