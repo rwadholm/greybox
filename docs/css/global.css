@@ -27,7 +27,7 @@ html, body {
   padding: 5px 18px 2px 18px;
   margin: 0 auto;
   text-shadow: 0 1px 2px #000;
-  cursor:move;
+  cursor:text;
   z-index: 1;
   -webkit-user-select: none;
   -webkit-app-region: drag;
@@ -48,15 +48,15 @@ html, body {
   color: #fff;
   padding: 3px 8px;
   top: 22px;
-  left: -9999px;
+  left: 0;
   height: 20px;
   width: 240px;
   border-radius: 8px;
   display: inline-block;
-  opacity: 0;
+  opacity: 0.6;
   z-index: 999;
 }
-#gb-h1:hover #gb-filename::before{
+#gb-filename:hover::before{
   opacity: 0.9;
   left: 0;
 }
