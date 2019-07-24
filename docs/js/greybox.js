@@ -29,7 +29,7 @@ function openFile (filePath) {
 function nameFile (filePath){
   currentFile = filePath
   currentFilename = currentFile.substring(currentFile.lastIndexOf('\\')+1)
-  if(currentFilename.length > 25) {
+  if(currentFilename.length > 20) {
     currentFilename = currentFilename.substring(0,20) +"...";
   }
   document.getElementById("gb-filename").title = currentFile
