@@ -44,23 +44,23 @@ html, body {
 }
 #gb-filename::before {
   position: absolute;
+  font-size: 12px;
   content: attr(data-title) " ";
   line-height: 1.2em;
-  background: #333;
+  background: #000;
   color: #fff;
-  padding: 3px 8px 2px 8px;
+  padding: 5px 8px 5px 8px;
   top: 22px;
-  left: -9999px;
+  left: 0;
   min-height: 20px;
   width: 100vw;
   border-radius: 8px;
-  display: inline-block;
-  opacity: 0;
+  display: none;
   z-index: 999;
 }
 #gb-filename:hover::before{
   opacity: 0.9;
-  left: 0;
+  display: inline-block;
 }
 #gb-nav {
   position: fixed;
