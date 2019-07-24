@@ -54,7 +54,7 @@ document.getElementById("gb-outer-code").addEventListener("paste", (e) => {
 
 document.addEventListener("keydown", function(e) {
   // Ctrl/Cmd+s to save file
-  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode === 83 e.keyCode !== 18) {
+  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode === 83 && e.keyCode !== 18) {
     e.preventDefault()
     const content = document.getElementById("gb-outer-code").innerHTML
     if(currentFile !== null){
