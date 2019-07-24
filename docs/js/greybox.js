@@ -91,22 +91,19 @@ if(ipcMain){
   ipcMain.on('get-file-data', (e, arg) => { // Win32 file opening
     let electron = require('electron');
     let app = electron.remote;
-    console.log('getting data')
     let data = null
     if (app.process.platform == 'win32' && app.process.argv.length >= 2) {
       var openFilePath = app.process.argv[1]
       data = openFilePath
-      console.log('data:'+ data)
     }
-    e.reply = e.reply = ('get-file-data-reply', data)
+    e.reply('get-file-data-reply', data)
   })
 }
 if(ipcRenderer){
   ipcRenderer.on('get-file-data-reply', (e, arg) => {
     if (arg === null) {
-      console.log("There is no file")
+      alert("Sorry, there was an error opening the file.")
     } else {
-      console.log(arg)
       openFile(arg)
     }
   })
