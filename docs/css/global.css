@@ -31,6 +31,24 @@ html, body {
   -webkit-user-select: none;
   -webkit-app-region: drag;
 }
+#gb-h1:before {
+  position: absolute;
+  background: #333;
+  padding: 3px 8px;
+  top: 22px;
+  left: 0;
+  right: 0;
+  max-width: 80%;
+  border-radius: 0 0 8px 8px;
+  display: none;
+  opacity: 0;
+  content: attr(title) ": ";
+  transition: all ease 0.3s;
+}
+#gb-h1:hover:before{
+  display: inline-block;
+  opacity: 0.9;
+}
 #gb-filename {
   color: #aaa;
   font-style: italic;
