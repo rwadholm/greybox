@@ -50,12 +50,12 @@ html, body {
   color: #fff;
   padding: 3px 8px;
   top: 22px;
-  left: 0;
-  height: 20px;
-  width: 240px;
+  left: -9999px;
+  min-height: 20px;
+  min-width: 240px;
   border-radius: 8px;
   display: inline-block;
-  opacity: 0.6;
+  opacity: 0;
   z-index: 999;
 }
 #gb-filename:hover::before{
