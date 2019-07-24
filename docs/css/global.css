@@ -36,7 +36,6 @@ html, body {
   color: #ccc;
   font-size: 14px;
   font-family: 'Consolas','Open Sans','Helvetica',sans-serif;
-  position: relative;
   display: inline-block;
   font-style: italic;
   -webkit-app-region: no-drag;
@@ -48,11 +47,11 @@ html, body {
   line-height: 1.2em;
   background: #333;
   color: #fff;
-  padding: 3px 8px 1px 8px;
+  padding: 3px 8px 2px 8px;
   top: 16px;
   left: -9999px;
   min-height: 20px;
-  min-width: 240px;
+  width: 100%;
   border-radius: 8px;
   display: inline-block;
   opacity: 0;
