@@ -53,11 +53,11 @@ document.getElementById("gb-outer-code").addEventListener("paste", (e) => {
 
 
 document.addEventListener("keydown", function(e) {
-  // Ctrl/Cmd+s to save file
+  // Ctrl/Cmd+s to save, Ctrl/Cmd+alt+s to "save as"
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 83 &&  !e.altKey) {
     e.preventDefault()
     const content = document.getElementById("gb-outer-code").innerHTML
-    if(currentFile !== null){
+    if(currentFile !== null && !e.altKey){
       saveFile(currentFile, content)
     } else {
       dialog.showSaveDialog(function(filePath){
@@ -70,21 +70,8 @@ document.addEventListener("keydown", function(e) {
     }
   }
 
-  // Ctrl/Cmd+alt+s to "save as"
-  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 83 && e.altKey) {
-    e.preventDefault()
-    const content = document.getElementById("gb-outer-code").innerHTML
-    dialog.showSaveDialog(function(filePath){
-      if(filePath !== 'undefined'){
-        saveFile(filePath, content)
-      } else {
-        alert("Sorry, there was an error saving the file.")
-      }
-    })
-  }
-
   // Ctrl/Cmd+o to open file
-  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode === 79) {
+  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 79) {
     e.preventDefault()
 
     dialog.showOpenDialog({
