@@ -23,7 +23,7 @@ html, body {
   border-radius: 8px 8px 0 0;
   height: 22px;
   max-width: 100%;
-  overflow: hidden;
+  overflow: visible;
   padding: 5px 18px 2px 18px;
   margin: 0 auto;
   text-shadow: 0 1px 2px #000;
@@ -34,6 +34,8 @@ html, body {
 }
 #gb-filename {
   color: #ccc;
+  font-size: 14px;
+  font-family: 'Consolas','Open Sans','Helvetica',sans-serif;
   position: relative;
   display: inline-block;
   font-style: italic;
