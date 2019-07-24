@@ -48,8 +48,8 @@ html, body {
   line-height: 1.2em;
   background: #333;
   color: #fff;
-  padding: 3px 8px;
-  top: 22px;
+  padding: 3px 8px 1px 8px;
+  top: 16px;
   left: -9999px;
   min-height: 20px;
   min-width: 240px;
