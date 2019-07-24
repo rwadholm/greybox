@@ -37,6 +37,8 @@ html, body {
   position: relative;
   display: inline-block;
   font-style: italic;
+  -webkit-app-region: no-drag;
+  -webkit-user-select: select;
 }
 #gb-filename::before {
   position: absolute;
