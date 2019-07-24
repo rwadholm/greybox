@@ -37,7 +37,7 @@ function nameFile (filePath){
 }
 
 // Close button
-document.getElementById("gb-close").addEventListener("click", function (e) {
+document.getElementById("gb-close").addEventListener("click", (e) => {
    window.close()
 })
 
@@ -52,7 +52,7 @@ document.getElementById("gb-outer-code").addEventListener("paste", (e) => {
 })
 
 
-document.addEventListener("keydown", function(e) {
+document.addEventListener("keydown", (e) => {
   // Ctrl/Cmd+s to save, Ctrl/Cmd+alt+s to "save as"
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 83) {
     e.preventDefault()
@@ -113,7 +113,7 @@ if(ipcRenderer){
 
 app.on('will-finish-launching', () => { // OSX file opening
   console.log('wfl: '+ process.argv)
-  app.on('open-url', function (e, filePath) {
+  app.on('open-url', (e, filePath) => {
     e.preventDefault()
     if(filePath !== 'undefined' && filePath !== null){
       console.log(filePath)
