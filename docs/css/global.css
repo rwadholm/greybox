@@ -100,7 +100,7 @@ html, body {
 }
 /* Scrollbar styles */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
   border-radius: 8px;
   z-index: 999;
   position: relative;
