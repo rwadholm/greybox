@@ -45,9 +45,10 @@ span#gb-filename::before {
   color: #fff;
   padding: 3px 8px;
   top: 22px;
-  left: -9999px;
+  left: 0;
+  height: 20px;
   right: 0;
-  max-width: 80%;
+  width: 240px;
   border-radius: 0 0 8px 8px;
   display: inline-block;
   opacity: 0;
