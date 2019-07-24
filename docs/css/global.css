@@ -32,7 +32,7 @@ html, body {
   -webkit-app-region: drag;
 }
 #gb-filename {
-  color: #aaa;
+  color: #ccc;
   position: relative;
   display: inline-block;
   font-style: italic;
