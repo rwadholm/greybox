@@ -71,8 +71,8 @@ document.addEventListener("keydown", function(e) {
   }
 
 
-  // Ctrl/Cmd+s+a to "save as" file
-  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode === 83   && e.keyCode === 65) {
+  // Ctrl/Cmd+alt+s to "save as"
+  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && e.keyCode === 83   && e.keyCode === 18) {
     e.preventDefault()
     const content = document.getElementById("gb-outer-code").innerHTML
     dialog.showSaveDialog(function(filePath){
@@ -81,7 +81,7 @@ document.addEventListener("keydown", function(e) {
       } else {
         alert("Sorry, there was an error saving the file.")
       }
-    })    
+    })
   }
 
   // Ctrl/Cmd+o to open file
