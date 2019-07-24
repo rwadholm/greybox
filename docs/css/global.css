@@ -34,7 +34,7 @@ html, body {
   -webkit-app-region: drag;
 }
 #gb-filename {
-  color: #ccc;
+  color: #aaa;
   font-size: 14px;
   font-family: 'Consolas','Open Sans','Helvetica',sans-serif;
   display: inline-block;
