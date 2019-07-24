@@ -30,7 +30,7 @@ function nameFile (filePath){
   currentFile = filePath
   currentFilename = currentFile.substring(currentFile.lastIndexOf('\\')+1)
   if(currentFilename.length > 20) {
-    currentFilename = currentFilename.substring(0,20) +"...";
+    currentFilename = currentFilename.substring(0,20) +"&hellip;";
   }
   document.getElementById("gb-filename").title = currentFile
   document.getElementById("gb-filename").innerHTML = currentFilename
