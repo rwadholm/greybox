@@ -87,8 +87,7 @@ document.addEventListener("keydown", function(e) {
   }
 }, false)
 
-if(ipcMain){
-  console.log(app.process.argv)
+if(ipcMain){  
   ipcMain.on('get-file-data', (e, arg) => { // Win32 file opening
     console.log('getting data')
     let data = null
