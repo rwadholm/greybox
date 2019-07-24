@@ -89,7 +89,8 @@ document.addEventListener("keydown", function(e) {
 
 if(ipcMain){
   ipcMain.on('get-file-data', (e, arg) => { // Win32 file opening
-    app = electron.remote;
+    let electron = require('electron');
+    let app = electron.remote;
     console.log('getting data')
     let data = null
     if (app.process.platform == 'win32' && app.process.argv.length >= 2) {
