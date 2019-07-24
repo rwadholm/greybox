@@ -44,6 +44,7 @@ html, body {
 }
 #gb-filename::before {
   position: absolute;
+  box-sizing: border-box;
   font-size: 12px;
   content: attr(data-title) " ";
   line-height: 1.2em;
