@@ -22,7 +22,8 @@ html, body {
   top: 0;
   border-radius: 8px 8px 0 0;
   height: 22px;
-  width: 100vw;
+  max-height: 22px;
+  max-width: 100%;
   overflow: visible;
   padding: 5px 18px 2px 18px;
   margin: 0 auto;
@@ -51,7 +52,7 @@ html, body {
   top: 22px;
   left: -9999px;
   min-height: 20px;
-  width: 100%;
+  width: 100vw;
   border-radius: 8px;
   display: inline-block;
   opacity: 0;
