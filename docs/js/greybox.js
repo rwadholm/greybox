@@ -70,7 +70,6 @@ document.addEventListener("keydown", function(e) {
     }
   }
 
-
   // Ctrl/Cmd+alt+s to "save as"
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 83 && e.keyCode === 18) {
     e.preventDefault()
