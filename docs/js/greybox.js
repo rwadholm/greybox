@@ -88,7 +88,7 @@ document.addEventListener("keydown", (e) => {
 
   if (e.keyCode === 9) { // Tab key
     e.preventDefault()
-    if(e.keyCode !== 16){
+    if(!e.tabKey){
       document.execCommand("InsertHTML", false, '  ')
     } else {
 
