@@ -90,11 +90,7 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault()
     if(!e.shiftKey){
       document.execCommand("InsertHTML", false, '  ')
-    } else {
-      const selection = window.getSelection()
-      let range = getRangeAt(-2)
-      document.execCommand("InsertHTML", false, '  ')
-    }
+    } 
   }
 }, false)
 
