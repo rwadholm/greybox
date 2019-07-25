@@ -36,10 +36,6 @@ function nameFile (filePath){
   document.getElementById("gb-filename").innerHTML = currentFilename
 }
 
-function unescape(a) {
-  return a.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
-}
-
 // Close button
 document.getElementById("gb-close").addEventListener("click", (e) => {
    window.close()
@@ -51,7 +47,7 @@ document.getElementById("gb-outer-code").addEventListener("paste", (e) => {
   const selection = window.getSelection()
   if (!selection.rangeCount) return false
   selection.deleteFromDocument()
-  document.execCommand("InsertHTML", false, unescape(trim(paste)))
+  document.execCommand("InsertHTML", false, trim(paste))
   e.preventDefault()
 })
 
