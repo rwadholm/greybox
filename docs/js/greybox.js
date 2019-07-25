@@ -89,9 +89,9 @@ document.addEventListener("keydown", (e) => {
   if (e.keyCode === 9 && e.keyCode !== 16) { // Tab key
     e.preventDefault()
     if(e.keyCode === 16){ // Unindent
-      document.execCommand('outdent', false, null
+      document.execCommand('outdent', true, null)
     } else { // Indent
-      document.execCommand('indent', false, null)
+      document.execCommand('indent', true, null)
     }
   }
 
