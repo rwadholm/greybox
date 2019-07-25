@@ -47,8 +47,7 @@ document.getElementById("gb-outer-code").addEventListener("paste", (e) => {
   const selection = window.getSelection()
   if (!selection.rangeCount) return false
   selection.deleteFromDocument()
-  paste = paste.replace(/^\n|\n$/g, '')
-  document.execCommand("InsertHTML", false, paste)
+  document.execCommand("InsertHTML", false, trim(paste))
   e.preventDefault()
 })
 
