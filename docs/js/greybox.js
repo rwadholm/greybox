@@ -43,7 +43,7 @@ document.getElementById("gb-close").addEventListener("click", (e) => {
 
 // Clean pasted text
 document.getElementById("gb-outer-code").addEventListener("paste", (e) => {
-  let paste = (event.clipboardData || window.clipboardData).getData('text')
+  let paste = (event.clipboardData || window.clipboardData).getData('text/html')
   const selection = window.getSelection()
   if (!selection.rangeCount) return false
   selection.deleteFromDocument()
