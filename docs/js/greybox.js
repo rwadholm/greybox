@@ -86,7 +86,24 @@ document.addEventListener("keydown", (e) => {
     });
   }
 
-  if (e.keyCode === 9) { // Tab key
+  if (e.keyCode === 9 && e.keyCode !== 16) { // Tab key
+    e.preventDefault()
+    // Insert four non-breaking spaces for the tab key
+    /*const editor = e.target
+    const doc = editor.ownerDocument.defaultView
+    let sel = doc.getSelection()
+    let range = sel.getRangeAt(0)
+    const tabNode = document.createTextNode("  ")
+    range.insertNode(tabNode)
+    range.setStartAfter(tabNode)
+    range.setEndAfter(tabNode)
+    sel.removeAllRanges()
+    sel.addRange(range)*/
+    const selection = window.getSelection()       document.execCommand("InsertHTML", false, '  ')
+
+  }
+
+  if (e.keyCode === 9 && e.keyCode === 16) { // Untab key
     e.preventDefault()
     // Insert four non-breaking spaces for the tab key
     const editor = e.target
