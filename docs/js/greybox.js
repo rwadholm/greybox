@@ -88,7 +88,7 @@ document.addEventListener("keydown", (e) => {
 
   if (e.keyCode === 9 && e.keyCode !== 16) { // Tab key
     e.preventDefault()
-    document.execCommand("InsertHTML", false, trim('  '))
+    document.execCommand("InsertHTML", false, '  ')
   }
 
   if (e.keyCode === 9 && e.keyCode === 16) { // Untab key
