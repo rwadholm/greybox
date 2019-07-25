@@ -93,8 +93,6 @@ document.addEventListener("keydown", (e) => {
       document.execCommand("InsertHTML", false, '  '+ selection)
     } else {
       document.execCommand("delete", false, null)
-      document.execCommand("delete", false, null)
-      document.execCommand("InsertHTML", false, selection)
     }
   }
 }, false)
