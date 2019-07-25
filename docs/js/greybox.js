@@ -88,7 +88,7 @@ document.addEventListener("keydown", (e) => {
 
   if (e.keyCode === 9) { // Tab key
     e.preventDefault()
-    let selection = window.selection()
+    let selection = window.getSelection()
     if(!e.shiftKey){
       document.execCommand("InsertHTML", false, '  '+ selection)
     } else {
