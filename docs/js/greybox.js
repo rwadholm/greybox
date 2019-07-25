@@ -91,7 +91,8 @@ document.addEventListener("keydown", (e) => {
     if(!e.shiftKey){
       document.execCommand("InsertHTML", false, '  ')
     } else {
-      document.execCommand("delete", false, '  ')
+      document.execCommand("delete", false, null)
+      document.execCommand("delete", false, null)
     }
   }
 }, false)
