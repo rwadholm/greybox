@@ -88,28 +88,14 @@ document.addEventListener("keydown", (e) => {
 
   if (e.keyCode === 9) { // Tab key
     e.preventDefault()
-    if(!e.tabKey){
+    if(!e.shiftKey){
       document.execCommand("InsertHTML", false, '  ')
     } else {
-
+      const selection = window.getSelection()
+      let range = getRangeAt(-2)
+      document.execCommand("InsertHTML", false, '  ')
     }
   }
-/*
-  if (e.keyCode === 9 && e.keyCode === 16) { // Untab key
-    e.preventDefault()
-    const selection = window.getSelection()
-    // Insert four non-breaking spaces for the tab key
-    const editor = e.target
-    const doc = editor.ownerDocument.defaultView
-    let sel = doc.getSelection()
-    let range = sel.getRangeAt(0)
-    const tabNode = document.createTextNode("  ")
-    range.insertNode(tabNode)
-    range.setStartAfter(tabNode)
-    range.setEndAfter(tabNode)
-    sel.removeAllRanges()
-    sel.addRange(range)
-  }*/
 }, false)
 
 if(ipcMain){
