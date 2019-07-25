@@ -35,6 +35,8 @@ html, body {
 }
 #gb-filename {
   color: #aaa;
+  background: rgba(0,0,0,0.8);
+  border-radius: 20px;
   font-size: 14px;
   font-family: 'Consolas','Open Sans','Helvetica',sans-serif;
   display: inline-block;
