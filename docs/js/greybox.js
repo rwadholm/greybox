@@ -93,7 +93,7 @@ document.addEventListener("keydown", (e) => {
     const doc = editor.ownerDocument.defaultView
     let sel = doc.getSelection()
     let range = sel.getRangeAt(0)
-    const tabNode = document.createTextNode("\u00a0\u00a0")
+    const tabNode = document.createTextNode("  ")
     range.insertNode(tabNode)
     range.setStartAfter(tabNode)
     range.setEndAfter(tabNode)
