@@ -88,16 +88,7 @@ document.addEventListener("keydown", (e) => {
 
   if (e.keyCode === 9 && e.keyCode !== 16) { // Tab key
     e.preventDefault()
-    const editor = e.target
-    const doc = editor.ownerDocument.defaultView
-    let sel = doc.getSelection()
-    let range = sel.getRangeAt(0)
-    const tabNode = document.createTextNode("  ")
-    range.insertNode(tabNode)
-    range.setStartAfter(tabNode)
-    range.setEndAfter(tabNode)
-    sel.removeAllRanges()
-    sel.addRange(range)
+    document.execCommand("InsertHTML", false, trim('  '))
   }
 
   if (e.keyCode === 9 && e.keyCode === 16) { // Untab key
