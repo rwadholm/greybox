@@ -45,6 +45,9 @@ html, body {
   -webkit-app-region: no-drag;
   -webkit-user-select: text;
 }
+#gb-filename:empty {
+  padding: 0;
+}
 #gb-filename::before {
   position: absolute;
   box-sizing: border-box;

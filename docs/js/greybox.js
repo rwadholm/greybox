@@ -101,9 +101,7 @@ if(ipcMain){
 }
 if(ipcRenderer){
   ipcRenderer.on('get-file-data-reply', (e, arg) => {
-    if (arg === null) {
-      alert("Sorry, there was an error opening the file.")
-    } else {
+    if (arg !== null) {
       openFile(arg)
     }
   })
