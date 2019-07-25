@@ -83,18 +83,18 @@ document.addEventListener("keydown", (e) => {
       } else {
         alert("Sorry, there was an error opening the file.")
       }
-    });
+    })
   }
 
   if (e.keyCode === 9 && e.keyCode !== 16) { // Tab key
     e.preventDefault()
-    document.execCommand('indent', false, null)
+    if(e.keyCode === 16){ // Unindent
+      document.execCommand('outdent', false, null
+    } else { // Indent
+      document.execCommand('indent', false, null)
+    }
   }
 
-  if (e.keyCode === 9 && e.keyCode === 16) { // Untab key
-    e.preventDefault()
-    document.execCommand('outdent', false, null)
-  }
 }, false)
 
 if(ipcMain){
