@@ -99,14 +99,14 @@ document.addEventListener("keydown", (e) => {
     range.setEndAfter(tabNode)
     sel.removeAllRanges()
     sel.addRange(range)*/
-    const selection = window.getSelection()       document.execCommand("InsertHTML", false, '  ')
+    doc.execCommand('indent', true, null)
 
   }
 
   if (e.keyCode === 9 && e.keyCode === 16) { // Untab key
     e.preventDefault()
     // Insert four non-breaking spaces for the tab key
-    const editor = e.target
+    /*const editor = e.target
     const doc = editor.ownerDocument.defaultView
     let sel = doc.getSelection()
     let range = sel.getRangeAt(0)
@@ -115,7 +115,8 @@ document.addEventListener("keydown", (e) => {
     range.setStartAfter(tabNode)
     range.setEndAfter(tabNode)
     sel.removeAllRanges()
-    sel.addRange(range)
+    sel.addRange(range)*/
+    doc.execCommand('outdent', true, null)
   }
 }, false)
 
