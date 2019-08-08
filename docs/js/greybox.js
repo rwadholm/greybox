@@ -87,18 +87,16 @@ document.addEventListener("keydown", (e) => {
     });
   }
 
-  // Ctrl/Cmd+f to open file
+  // Ctrl/Cmd+f to find text in file
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
 
     findInFiles.find("eting", '/Users/bobwa/Documents/Meetings', '.gxt$').then(function(results) {
-        for (var result in results) {
-            var res = results[result];
-            console.log(
-                'found "' + res.matches[0] + '" ' + res.count
-                + ' times in "' + result + '"'
-            )
-        }
+      for (var result in results) {
+        var res = results[result];
+        console.log('<p class="found">Found <b>'+ res.matches[0] +'</b> ' + res.count +' times in <a href="">'+ result +'</a><p>')
+        document.write('<p class="found">Found <b>'+ res.matches[0] +'</b> ' + res.count +' times in <a href="">'+ result +'</a><p>')
+      }
     })
   }
 
