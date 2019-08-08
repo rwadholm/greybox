@@ -37,6 +37,32 @@ function nameFile (filePath){
   document.getElementById("gb-filename").innerHTML = currentFilename
 }
 
+function addFind() { // Add the find box
+  const div = document.createElement('div');
+  div.className = 'findBox';
+  div.innerHTML = `
+    <label>Find:</label> <input type="text" name="pattern" value="" />
+    <label>Folder:</label> <input type="text" name="directory" value="." />
+    <label>Filetype:</label> <input type="text" name="filetype" value=".gxt$" />
+    <input type="button" value="" onclick="findIt()" />
+  `;
+  document.getElementById('gb-nav').appendChild(div);
+}
+
+function removeFind(input) {
+  document.getElementById('gb-nav').removeChild(input.parentNode);
+}
+
+function findIt(pattern, directory, ext){
+  findInFiles.find({'term':pattern,'flags':'ig'},directory, ext).then(function(results) {
+    for (var result in results) {
+      var res = results[result];
+
+      document.write('<p class="found">Found <b>'+ res.matches[0] +'</b> ' + res.count +' times in <a href="">'+ result +'</a><p>')
+    }
+  })
+}
+
 // Close button
 document.getElementById("gb-close").addEventListener("click", (e) => {
    window.close()
@@ -91,13 +117,8 @@ document.addEventListener("keydown", (e) => {
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
 
-    findInFiles.find("eting", '/Users/bobwa/Documents/Meetings', '.gxt$').then(function(results) {
-      for (var result in results) {
-        var res = results[result];
-        console.log('<p class="found">Found <b>'+ res.matches[0] +'</b> ' + res.count +' times in <a href="">'+ result +'</a><p>')
-        document.write('<p class="found">Found <b>'+ res.matches[0] +'</b> ' + res.count +' times in <a href="">'+ result +'</a><p>')
-      }
-    })
+
+
   }
 
   if (e.keyCode === 9) { // Tab key
