@@ -1,6 +1,7 @@
 const { app, dialog, electron, ipcMain } = require('electron').remote
 const { ipcRenderer } = require('electron')
 const fs = require('fs')
+const findInFiles = require('find-in-files')
 
 let currentFile = null
 let filePath = null
@@ -84,6 +85,13 @@ document.addEventListener("keydown", (e) => {
         alert("Sorry, there was an error opening the file.")
       }
     });
+  }
+
+  // Ctrl/Cmd+f to open file
+  if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
+    e.preventDefault()
+
+    console.log('hi')
   }
 
   if (e.keyCode === 9) { // Tab key

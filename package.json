@@ -39,6 +39,7 @@
   },
   "postinstall": "electron-builder install-app-deps",
   "dependencies": {
+    "find-in-files": "^0.5.0",
     "ipc": "^0.0.1"
   }
 }
