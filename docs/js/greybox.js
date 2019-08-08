@@ -91,7 +91,7 @@ document.addEventListener("keydown", (e) => {
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
 
-    console.log('hi')
+    console.log(find('eting', '/Users/bobwa/Documents/Meetings/', 'gxt'))
   }
 
   if (e.keyCode === 9) { // Tab key
