@@ -91,7 +91,15 @@ document.addEventListener("keydown", (e) => {
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
 
-    console.log(find('eting', '/Users/bobwa/Documents/Meetings/', 'gxt'))
+    findInFiles.find("eting", '/Users/bobwa/Documents/Meetings', '.gxt$').then(function(results) {
+        for (var result in results) {
+            var res = results[result];
+            console.log(
+                'found "' + res.matches[0] + '" ' + res.count
+                + ' times in "' + result + '"'
+            )
+        }
+    })
   }
 
   if (e.keyCode === 9) { // Tab key
