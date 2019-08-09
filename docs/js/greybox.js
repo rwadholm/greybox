@@ -6,7 +6,7 @@ const findInFiles = require('find-in-files')
 let currentFile = null
 let filePath = null
 
-document.write('<h1 id="gb-h1">greybox <span id="gb-filename" data-title="Filename"></span></h1><div id="gb-finder"><label>Find:</label> <input type="text" name="gb-pattern" id="gb-pattern" placeholder="pattern" value="" /><br><label>Directory:</label> <input type="text" name="gb-directory" id="gb-directory" value="." /><br><label>Filetype:</label> <input type="text" name="gb-filetype" id="gb-filetype" value=".gxt$" /><br><input type="button" id="gb-findIt" value="Find" /> <a href="#" id="gb-closeFinder">Close</a><div id="gb-finderResults"></div></div><nav id="gb-nav"><a href="#" id="gb-close">X</a></nav><section id="gb-outer-code" contenteditable="plaintext-only"></section>')
+document.write('<h1 id="gb-h1">greybox <span id="gb-filename" data-title="Filename"></span></h1><div id="gb-finder"><label>Find:</label> <input type="text" name="gb-pattern" id="gb-pattern" placeholder="pattern" value="" /><br><label>Directory:</label> <input type="text" name="gb-directory" id="gb-directory" value="." /><br><label>Filetype:</label> <input type="text" name="gb-filetype" id="gb-filetype" value=".gxt" /><br><input type="button" id="gb-findIt" value="Find" /> <a href="#" id="gb-closeFinder">Close</a><div id="gb-finderResults"></div></div><nav id="gb-nav"><a href="#" id="gb-close">X</a></nav><section id="gb-outer-code" contenteditable="plaintext-only"></section>')
 
 function saveFile (filePath, content) {
   try {
@@ -50,8 +50,7 @@ function removeFind() {
 }
 
 function findIt(pattern, directory, ext){
-  findInFiles.find({'term':pattern,'flags':'ig'},directory, ext).then(function(results) {
-    console.log("find: "+ pattern, directory, ext)
+  findInFiles.find({'term':pattern,'flags':'ig'},directory, ext +'$').then(function(results) {
     for (let result in results) {
       let res = results[result];
       let currentRes = document.createElement('p')
