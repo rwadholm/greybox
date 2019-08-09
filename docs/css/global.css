@@ -76,10 +76,11 @@ html, body {
   top: 22px;
   width: 100vw;
   display: none;
-  background: rgba(80,80,80,0.8);
+  background: rgba(50,50,50,0.8);
   overflow-y: scroll;
   height: auto;
   max-height: 50vh;
+  padding: 4px 14px;
 }
 #gb-finder input {
   background: #000;
