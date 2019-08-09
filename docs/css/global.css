@@ -78,7 +78,7 @@ html, body {
   display: none;
   background: rgba(0,0,0,0.8);
   overflow-y: scroll;
-  height: 100px;
+  height: auto;
   max-height: 50vh;
 }
 #gb-finder input {
