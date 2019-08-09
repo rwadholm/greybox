@@ -37,8 +37,11 @@ function nameFile (filePath){
   document.getElementById("gb-filename").innerHTML = currentFilename
 }
 
-function addFind(filePath = './') { // Add the find box
-  let currentFolder = filePath.split("/").slice(0,-1).join("/")
+function addFind(filePath) { // Add the find box
+  currentFolder = '.'
+  if(filePath){
+    let currentFolder = filePath.split("/").slice(0,-1).join("/")
+  }
   document.getElementById("gb-finder").style.display = "block"
   document.getElementById("gb-pattern").focus()
   document.getElementById("gb-directory").value = currentFolder
@@ -131,11 +134,7 @@ document.addEventListener("keydown", (e) => {
   // Ctrl/Cmd+f to find text in file
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
-    if(filePath){
-      addFind(filePath)
-    } else {      
-      addFind('filepath')
-    }
+    addFind(filePath)
   }
 
   if (e.keyCode === 9) { // Tab key
