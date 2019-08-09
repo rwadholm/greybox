@@ -132,7 +132,10 @@ document.addEventListener("keydown", (e) => {
   // Ctrl/Cmd+f to find text in file
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
-    if(currentFile){
+
+    currentFile = document.getElementById("gb-filename").getAttribute("data-title")
+    console.log('Current File: '+ currentFile)
+    if(currentFile !== null){
       addFind(currentFile)
     } else {
       addFind('filepath')
