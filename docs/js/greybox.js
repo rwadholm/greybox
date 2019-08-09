@@ -37,7 +37,7 @@ function nameFile (filePath){
   document.getElementById("gb-filename").innerHTML = currentFilename
 }
 
-function addFind(filePath) { // Add the find box
+function addFind(filePath = './') { // Add the find box
   currentFolder = '.'
   if(filePath){
     let currentFolder = filePath.split("/").slice(0,-1).join("/")
@@ -134,8 +134,10 @@ document.addEventListener("keydown", (e) => {
   // Ctrl/Cmd+f to find text in file
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
-    if(filePath){
+    if(filePath !== null){
       addFind(filePath[0])
+    } else {
+      addFind()
     }
   }
 
