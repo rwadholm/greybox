@@ -54,7 +54,7 @@ function findIt(pattern, directory, ext){
       let res = results[result];
       let currentRes = document.createElement('p')
       currentRes.classList.add('gb-found')
-      currentRes.innerHTML = `Found <b>${res.matches[0]}</b> ${res.count} times in <a class="gb-openFinderFile" onClick="openFile(this.textContent);removeFind();return false;">${result}</a>`
+      currentRes.innerHTML = `Found <b>${res.matches[0]}</b> ${res.count} times in <a href="#" class="gb-openFinderFile" onClick="window.open(this.textContent);return false;">${result}</a>`
       document.getElementById('gb-finderResults').appendChild(currentRes)
     }
   })
