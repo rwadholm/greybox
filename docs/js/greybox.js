@@ -49,10 +49,12 @@ function removeFind(input) {
 
 function findIt(pattern, directory, ext){
   findInFiles.find({'term':pattern,'flags':'ig'},directory, ext).then(function(results) {
+    console.log("find: "+ pattern, directory, ext)
     for (let result in results) {
       let res = results[result];
       let currentRes = document.createElement('p')
-      currentRes.innerHTML('<p class="gb-found">Found <b>'+ res.matches[0] +'</b> ' + res.count +' times in <a href="File:///'+ result +'">'+ result +'</a><p>')
+      currentRes.classList.add('gb-found');
+      currentRes.innerHTML = 'Found <b>'+ res.matches[0] +'</b> ' + res.count +' times in <a href="File:///'+ result +'">'+ result +'</a>'
       document.getElementById('gb-finderResults').appendChild(currentRes)
     }
   })
