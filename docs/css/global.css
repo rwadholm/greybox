@@ -76,7 +76,7 @@ html, body {
   top: 22px;
   width: 100vw;
   display: none;
-  background: rgba(0,0,0,0.8);
+  background: rgba(80,80,80,0.8);
   overflow-y: scroll;
   height: auto;
   max-height: 50vh;
@@ -86,7 +86,7 @@ html, body {
   border-radius: 4px;
   border: none;
   display: inline-block;
-  margin-right: 2px;
+  margin: 2px;
   padding: 2px 4px;
 }
 #gb-nav {
