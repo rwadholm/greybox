@@ -1,7 +1,7 @@
 const { app, dialog, electron, ipcMain } = require('electron').remote
 const { ipcRenderer } = require('electron')
 const fs = require('fs')
-const findInFiles = require('find-in-files')
+//const findInFiles = require('find-in-files')
 
 let currentFile = null
 let filePath = null
@@ -36,7 +36,7 @@ function nameFile (filePath){
   document.getElementById("gb-filename").setAttribute("data-title", currentFile)
   document.getElementById("gb-filename").innerHTML = currentFilename
 }
-
+/*
 function addFind() { // Add the find box
   const div = document.createElement('div');
   div.className = 'findBox';
@@ -62,7 +62,7 @@ function findIt(pattern, directory, ext){
     }
   })
 }
-
+*/
 // Close button
 document.getElementById("gb-close").addEventListener("click", (e) => {
    window.close()
@@ -116,7 +116,7 @@ document.addEventListener("keydown", (e) => {
   // Ctrl/Cmd+f to find text in file
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
-    addFind()
+    //addFind()
   }
 
   if (e.keyCode === 9) { // Tab key
