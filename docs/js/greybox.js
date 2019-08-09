@@ -37,11 +37,9 @@ function nameFile (filePath){
   document.getElementById("gb-filename").innerHTML = currentFilename
 }
 
-function addFind(filePath = './') { // Add the find box
-  currentFolder = '.'
-  if(filePath){
-    let currentFolder = filePath.split("/").slice(0,-1).join("/")
-  }
+function addFind(filePath = 'filepath') { // Add the find box
+  let currentFolder = filePath.split("/").slice(0,-1).join("/")
+
   document.getElementById("gb-finder").style.display = "block"
   document.getElementById("gb-pattern").focus()
   document.getElementById("gb-directory").value = currentFolder
@@ -137,7 +135,7 @@ document.addEventListener("keydown", (e) => {
     if(filePath.length > -1){
       addFind(filePath[0])
     } else {
-      addFind('./')
+      addFind('filepath')
     }
   }
 
