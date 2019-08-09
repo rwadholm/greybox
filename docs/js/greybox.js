@@ -1,7 +1,7 @@
 const { app, dialog, electron, ipcMain } = require('electron').remote
 const { ipcRenderer } = require('electron')
 const fs = require('fs')
-//const findInFiles = require('find-in-files')
+const findInFiles = require('find-in-files')
 
 let currentFile = null
 let filePath = null
