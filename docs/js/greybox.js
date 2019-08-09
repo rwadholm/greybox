@@ -19,7 +19,7 @@ function saveFile (filePath, content) {
 function openFile (filePath) {
   fs.readFile(filePath,'utf-8', (err, content) => {
     if(err){
-      alert('Failed to open the file')
+      console.log('Failed to open the file')
       return
     }
     nameFile(filePath)
