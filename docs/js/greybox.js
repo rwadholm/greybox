@@ -6,7 +6,7 @@ const fs = require('fs')
 let currentFile = null
 let filePath = null
 
-document.write('<h1 id="gb-h1">greybox <span id="gb-filename" data-title="Filename"></span></h1><nav id="gb-nav"> <a href="#" id="gb-close">X</a></nav><section id="gb-outer-code" contenteditable="plaintext-only"></section>')
+document.write('<h1 id="gb-h1">greybox <span id="gb-filename" data-title="Filename"></span></h1><div id="gb-finder"><label>Find:</label> <input type="text" name="gb-pattern" id="gb-pattern" value="" /><label>Folder:</label> <input type="text" name="gb-directory" id="gb-directory"" value="." /><label>Filetype:</label> <input type="text" name="gb-filetype" id="gb-filetype" value=".gxt$" /><input type="button" id="gb-findIt" value="" /><a href="#" id="gb-closeFinder">Close</a><div id="gb-finderResults"></div></div><nav id="gb-nav"><a href="#" id="gb-close">X</a></nav><section id="gb-outer-code" contenteditable="plaintext-only"></section>')
 
 function saveFile (filePath, content) {
   try {
@@ -36,34 +36,44 @@ function nameFile (filePath){
   document.getElementById("gb-filename").setAttribute("data-title", currentFile)
   document.getElementById("gb-filename").innerHTML = currentFilename
 }
-/*
+
 function addFind() { // Add the find box
-  const div = document.createElement('div');
-  div.className = 'findBox';
-  div.innerHTML = `
-    <label>Find:</label> <input type="text" name="pattern" value="" />
-    <label>Folder:</label> <input type="text" name="directory" value="." />
-    <label>Filetype:</label> <input type="text" name="filetype" value=".gxt$" />
-    <input type="button" value="" onclick="findIt()" />
-  `;
-  document.getElementById('gb-nav').appendChild(div);
+  document.getElementById("gb-finder").style.display = "block";
+  document.getElementById("gb-pattern").focus();
 }
 
 function removeFind(input) {
-  document.getElementById('gb-nav').removeChild(input.parentNode);
+  document.getElementById('gb-finderResults').innerHTML = ''
+  document.getElementById("gb-finder").style.display = "none"
 }
 
 function findIt(pattern, directory, ext){
   findInFiles.find({'term':pattern,'flags':'ig'},directory, ext).then(function(results) {
-    for (var result in results) {
-      var res = results[result];
-
-      document.write('<p class="found">Found <b>'+ res.matches[0] +'</b> ' + res.count +' times in <a href="">'+ result +'</a><p>')
+    for (let result in results) {
+      let res = results[result];
+      let currentRes = document.createElement('p')
+      currentRes.innerHTML('<p class="gb-found">Found <b>'+ res.matches[0] +'</b> ' + res.count +' times in <a href="File:///'+ result +'">'+ result +'</a><p>')
+      document.getElementById('gb-finderResults').appendChild(currentRes)
     }
   })
 }
-*/
-// Close button
+
+// Find button
+document.getElementById("gb-findIt").addEventListener("click", (e) => {
+  findIt(
+    document.getElementById('gb-pattern').value,
+    document.getElementById('gb-directory').value,
+    document.getElementById('gb-filetype').value
+  );
+})
+
+// Close find button
+document.getElementById("gb-closeFinder").addEventListener("click", (e) => {
+  e.preventDefault();
+  removeFind();
+})
+
+// Close window button
 document.getElementById("gb-close").addEventListener("click", (e) => {
    window.close()
 })
@@ -116,7 +126,7 @@ document.addEventListener("keydown", (e) => {
   // Ctrl/Cmd+f to find text in file
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
-    //addFind()
+    addFind()
   }
 
   if (e.keyCode === 9) { // Tab key

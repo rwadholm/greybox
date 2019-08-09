@@ -71,6 +71,12 @@ html, body {
   display: inline-block;
   opacity: 0.9;
 }
+#gb-finder {
+  position: fixed;
+  top: 22px;
+  width: 100vw;
+  display: none;
+}
 #gb-nav {
   position: fixed;
   top: 22px;
