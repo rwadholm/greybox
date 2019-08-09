@@ -131,7 +131,11 @@ document.addEventListener("keydown", (e) => {
   // Ctrl/Cmd+f to find text in file
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
-    addFind(filePath)
+    if(filePath){
+      addFind(filePath)
+    } else {      
+      addFind('filepath')
+    }
   }
 
   if (e.keyCode === 9) { // Tab key
