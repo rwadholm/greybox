@@ -54,7 +54,7 @@ function findIt(pattern, directory, ext){
       let res = results[result];
       let currentRes = document.createElement('p')
       currentRes.classList.add('gb-found')
-      currentRes.innerHTML = `Found <b>${res.matches[0]}</b> ${res.count} times in <a class="gb-openFinderFile" href="${result}">${result}</a>`
+      currentRes.innerHTML = `Found <b>${res.matches[0]}</b> ${res.count} times in <a class="gb-openFinderFile" href="${result}" onClick="this.preventDefault();openFile(this.href)">${result}</a>`
       document.getElementById('gb-finderResults').appendChild(currentRes)
     }
   })
@@ -68,12 +68,6 @@ document.getElementById("gb-findIt").addEventListener("click", (e) => {
   if(pattern !== '' && directory !== '' && ext !== ''){
     findIt(pattern, directory, ext)
   }
-})
-
-// Open file when clicked in Finder
-document.getElementById("gb-openFinderFile").addEventListener("click", (e) => {
-  e.preventDefault()
-  openFile(e.href)
 })
 
 // Close find button
