@@ -37,7 +37,7 @@ function nameFile (filePath){
   document.getElementById("gb-filename").innerHTML = currentFilename
 }
 
-function addFind(filePath) { // Add the find box
+function addFind(filePath = '.') { // Add the find box
   let currentFolder = filePath.split("/").slice(0,-1).join("/")
   document.getElementById("gb-finder").style.display = "block"
   document.getElementById("gb-pattern").focus()
