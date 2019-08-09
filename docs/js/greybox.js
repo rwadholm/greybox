@@ -6,7 +6,7 @@ const findInFiles = require('find-in-files')
 let currentFile = null
 let filePath = null
 
-document.write('<h1 id="gb-h1">greybox <span id="gb-filename" data-title="Filename"></span></h1><div id="gb-finder"><label>Find:</label> <input type="text" name="gb-pattern" id="gb-pattern" value="" /><label>Folder:</label> <input type="text" name="gb-directory" id="gb-directory"" value="." /><label>Filetype:</label> <input type="text" name="gb-filetype" id="gb-filetype" value=".gxt$" /><input type="button" id="gb-findIt" value="Find" /><a href="#" id="gb-closeFinder">Close</a><div id="gb-finderResults"></div></div><nav id="gb-nav"><a href="#" id="gb-close">X</a></nav><section id="gb-outer-code" contenteditable="plaintext-only"></section>')
+document.write('<h1 id="gb-h1">greybox <span id="gb-filename" data-title="Filename"></span></h1><div id="gb-finder"><label>Find:</label> <input type="text" name="gb-pattern" id="gb-pattern" value="Find pattern" /><label>Folder:</label> <input type="text" name="gb-directory" id="gb-directory" value="." /><label>Filetype:</label> <input type="text" name="gb-filetype" id="gb-filetype" value=".gxt$" /><input type="button" id="gb-findIt" value="Find" /><a href="#" id="gb-closeFinder">Close</a><div id="gb-finderResults"></div></div><nav id="gb-nav"><a href="#" id="gb-close">X</a></nav><section id="gb-outer-code" contenteditable="plaintext-only"></section>')
 
 function saveFile (filePath, content) {
   try {
@@ -53,8 +53,8 @@ function findIt(pattern, directory, ext){
     for (let result in results) {
       let res = results[result];
       let currentRes = document.createElement('p')
-      currentRes.classList.add('gb-found');
-      currentRes.innerHTML = 'Found <b>'+ res.matches[0] +'</b> ' + res.count +' times in <a href="File:///'+ result +'">'+ result +'</a>'
+      currentRes.classList.add('gb-found')
+      currentRes.innerHTML = `Found <b>${res.matches[0]}</b> ${res.count} times in <a class="gb-openFinderFile" href="${result}">${result}</a>`
       document.getElementById('gb-finderResults').appendChild(currentRes)
     }
   })
@@ -62,17 +62,24 @@ function findIt(pattern, directory, ext){
 
 // Find button
 document.getElementById("gb-findIt").addEventListener("click", (e) => {
-  findIt(
-    document.getElementById('gb-pattern').value,
-    document.getElementById('gb-directory').value,
-    document.getElementById('gb-filetype').value
-  );
+  let pattern = document.getElementById('gb-pattern').value
+  let directory = document.getElementById('gb-directory').value
+  let ext = document.getElementById('gb-filetype').value
+  if(pattern !== '' && directory !== '' && ext !== ''){
+    findIt(pattern, directory, ext)
+  }
+})
+
+// Open file when clicked in Finder
+document.getElementById("gb-openFinderFile").addEventListener("click", (e) => {
+  e.preventDefault()
+  openFile(e.href)
 })
 
 // Close find button
 document.getElementById("gb-closeFinder").addEventListener("click", (e) => {
-  e.preventDefault();
-  removeFind();
+  e.preventDefault()
+  removeFind()
 })
 
 // Close window button
