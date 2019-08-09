@@ -39,7 +39,6 @@ function nameFile (filePath){
 
 function addFind(filePath) { // Add the find box
   let currentFolder = filePath.split("\\").slice(0,-1).join("\\")
-  console.log('current folder: '+ currentFolder)
   document.getElementById("gb-finder").style.display = "block"
   document.getElementById("gb-pattern").focus()
   document.getElementById("gb-directory").value = currentFolder
@@ -132,9 +131,7 @@ document.addEventListener("keydown", (e) => {
   // Ctrl/Cmd+f to find text in file
   if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey) && e.keyCode === 70) {
     e.preventDefault()
-
     currentFile = document.getElementById("gb-filename").getAttribute("data-title")
-    console.log('Current File: '+ currentFile)
     if(currentFile !== null){
       addFind(currentFile)
     } else {
