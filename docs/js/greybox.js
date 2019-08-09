@@ -44,7 +44,7 @@ function addFind(filePath = './') { // Add the find box
   document.getElementById("gb-directory").value = currentFolder
 }
 
-function removeFind(input) {
+function removeFind() {
   document.getElementById('gb-finderResults').innerHTML = ''
   document.getElementById("gb-finder").style.display = "none"
 }
